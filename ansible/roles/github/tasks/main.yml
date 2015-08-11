@@ -1,0 +1,30 @@
+---
+- name: Remove folders
+  file: path={{workspace}}{{item}} state=absent
+  with_items:
+     "{{repos}}"
+
+- name: Download repo contents from github
+  get_url: url=https://github.com/clearbooks/{{item}}/archive/master.zip dest={{workspace}}{{item}}.zip
+  with_items:
+     "{{repos}}"
+
+- name: Prepare folders for repos
+  file: path={{workspace}}{{item}} state=directory
+  with_items:
+    "{{repos}}"
+
+- name: Unarchive repos
+  unarchive: src={{workspace}}{{item}}.zip dest={{workspace}}{{item}} copy=no force=yes
+  with_items:
+    "{{repos}}"
+
+- name: Twiddle name
+  shell: cd {{workspace}}{{item}} && mv * {{item}} && mv {{item}}/* . && rm -rf {{item}}
+  with_items:
+    "{{repos}}"
+
+- name: Remove archives
+  file: path={{workspace}}{{item}}.zip state=absent
+  with_items:
+    "{{repos}}"
