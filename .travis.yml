@@ -1,6 +1,7 @@
 ---
 language: python
 python: "2.7"
+sudo: true
 
 before_install:
   - echo "localhost ansible_connection=local" >> test.yml
