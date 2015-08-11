@@ -13,4 +13,4 @@ install:
 
 script:
   # Check the role/playbooks syntax
-  - ansible-playbook -i test.yml --syntax-check ansible/site.yml
+  - ansible-playbook -i test.yml ansible/site.yml
