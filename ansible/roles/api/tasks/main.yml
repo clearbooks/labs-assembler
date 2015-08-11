@@ -3,4 +3,4 @@
   shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 - name: Run composer install
-  composer: command=install working_dir={{workspace}}labs-json-api prefer_dist=yes no_dev=yes
+  composer: command=install working_dir={{workspace}}labs-json-api prefer_dist=yes no_dev=yes ignore_platform_reqs=yes
