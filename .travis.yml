@@ -4,7 +4,7 @@ python: "2.7"
 
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install php -qq
+  - sudo apt-get install php5-cli -qq
   - touch test.yml
   - echo "localhost ansible_connection=local" >> test.yml
 
