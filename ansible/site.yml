@@ -10,6 +10,7 @@
       - labs-frontend
 
   roles:
+   - setup
    - github
    - api
    - frontend
