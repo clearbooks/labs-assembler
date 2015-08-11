@@ -1,0 +1,15 @@
+---
+- hosts: all
+  sudo: true
+
+  vars:
+    - workspace: ../workspace/
+
+    - repos:
+      - labs-json-api
+      - labs-frontend
+
+  roles:
+   - github
+   - api
+   - frontend
