@@ -13,7 +13,6 @@
 
 - name: Run bower
   shell: bower install chdir={{workspace}}labs-frontend
-  sudo: false
 
 - name: Run grunt to build frontend
   shell: grunt build chdir={{workspace}}labs-frontend
