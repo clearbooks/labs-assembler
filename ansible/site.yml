@@ -10,8 +10,8 @@
       - labs-frontend
 
   roles:
-   - travis
-   - setup
-   - github
-   - api
-   - frontend
+   - { role: travis, when: ansible_os_family == 'Debian' }
+   - { role: setup }
+   - { role: github }
+   - { role: api }
+   - { role: frontend }
