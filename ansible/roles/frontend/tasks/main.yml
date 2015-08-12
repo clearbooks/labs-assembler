@@ -4,6 +4,7 @@
 
 - name: Update npm
   npm: name=npm state=latest global=yes
+  sudo: true
 
 - name: Update frontend dependencies
   npm: path={{workspace}}labs-frontend state=latest
