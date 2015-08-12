@@ -12,4 +12,4 @@ install:
 
 script:
   # Check the role/playbooks syntax
-  - rvm use 1.9.2 && ansible-playbook -i test.yml ansible/site.yml
+  - rvm install 2.0.2 && rvm use 2.0.2 && ansible-playbook -i test.yml ansible/site.yml
