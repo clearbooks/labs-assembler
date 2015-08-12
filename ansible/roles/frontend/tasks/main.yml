@@ -12,7 +12,8 @@
   npm: name=bower global=yes state=present
 
 - name: Run bower
-  shell: bower install chdir={{workspace}}labs-frontend
+  shell: bower install chdir={{workspace}}labs-frontend --allow-root
+  sudo: true
 
 - name: Run grunt to build frontend
   shell: grunt build chdir={{workspace}}labs-frontend
