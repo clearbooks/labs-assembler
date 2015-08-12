@@ -10,6 +10,7 @@
 
 - name: Ensure bower exists
   npm: name=bower global=yes state=present
+  sudo: false
 
 - name: Run bower
   shell: bower install chdir={{workspace}}labs-frontend
