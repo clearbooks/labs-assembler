@@ -19,5 +19,5 @@
   shell: bower install chdir={{workspace}}labs-frontend
 
 - name: Run grunt to build frontend
-  shell: source ~/.bashrc && grunt build chdir={{workspace}}labs-frontend
+  shell: source ~/.bashrc && grunt build chdir={{workspace}}labs-frontend executable=/bin/bash
 
