@@ -1,5 +1,8 @@
 ---
-- name: Update frontend npm
+- name: Update npm
+  npm: name=npm global=yes state=latest
+
+- name: Update frontend dependencies
   npm: path={{workspace}}labs-frontend state=latest
 
 - name: Ensure grunt-cli exists
@@ -7,3 +10,4 @@
 
 - name: Run grunt to build frontend
   shell: grunt build chdir={{workspace}}labs-frontend
+
