@@ -3,13 +3,13 @@ language: python
 python: "2.7"
 sudo: true
 
-before_install:
-  - echo "localhost ansible_connection=local" >> test.yml
+#before_install:
+#  - echo "localhost ansible_connection=local" >> test.yml
 
-install:
-  # Install ansible
-  - pip install ansible
+#install:
+# Install ansible
+# - pip install ansible
 
 script:
   # Check the role/playbooks syntax
-  - ansible-playbook -i test.yml ansible/site.yml
+  - rvm current && gem install compass && which compass
