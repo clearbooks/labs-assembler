@@ -1,1 +1,24 @@
 ---
+- name: Attempt to install compass
+  gem: name=compass state=present user_install=no
+
+- name: Update npm
+  npm: name=npm state=latest global=yes
+
+- name: Update frontend dependencies
+  npm: path={{workspace}}labs-frontend state=latest
+
+- name: Ensure grunt-cli exists
+  npm: name=grunt-cli global=yes state=present
+  sudo: true
+
+- name: Ensure bower exists
+  npm: name=bower global=yes state=present
+  sudo: true
+
+- name: Run bower
+  shell: bower install chdir={{workspace}}labs-frontend
+
+- name: Run grunt to build frontend
+  shell: source ~/.bashrc && grunt build chdir={{workspace}}labs-frontend executable=/bin/bash
+
