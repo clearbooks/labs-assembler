@@ -13,7 +13,7 @@
   sudo: true
 
 - name: Ensure grunt-compass exists
-  npm: grunt-contrib-compass global=yes state=present
+  npm: name=grunt-contrib-compass global=yes state=present
   sudo: true
 
 - name: Ensure bower exists
