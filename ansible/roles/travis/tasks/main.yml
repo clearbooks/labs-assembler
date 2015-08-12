@@ -2,8 +2,11 @@
 - name: Add recent PHP
   shell: yes | add-apt-repository ppa:ondrej/php5
 
+- name: Add recent Node
+  shell: yes | add-apt-repository ppa:chris-lea/node.js
+
 - name: Install PHP
   apt: name=php5-cli state=present update_cache=yes
 
 - name: Install NPM
-  apt: name=npm state=present
+  apt: name=nodejs state=present update_cache=yes
