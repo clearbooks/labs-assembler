@@ -1,6 +1,6 @@
 ---
 - name: Attempt to install compass
-  gem: name=compass state=present
+  gem: name=compass state=present user_install=no
 
 - name: Update npm
   npm: name=npm state=latest global=yes
@@ -10,10 +10,6 @@
 
 - name: Ensure grunt-cli exists
   npm: name=grunt-cli global=yes state=present
-  sudo: true
-
-- name: Ensure grunt-compass exists
-  npm: name=grunt-contrib-compass global=yes state=present
   sudo: true
 
 - name: Ensure bower exists
