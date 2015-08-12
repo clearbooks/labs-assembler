@@ -1,7 +1,6 @@
 ---
 - name: Attempt to install compass
   gem: name=compass state=present
-  sudo: true
 
 - name: Update npm
   npm: name=npm state=latest global=yes
@@ -16,10 +15,8 @@
   npm: name=bower global=yes state=present
   sudo: true
 
-
 - name: Run bower
-  shell: bower install chdir={{workspace}}labs-frontend --allow-root
-  sudo: true
+  shell: bower install chdir={{workspace}}labs-frontend
 
 - name: Run grunt to build frontend
   shell: grunt build chdir={{workspace}}labs-frontend
