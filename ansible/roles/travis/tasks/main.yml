@@ -8,5 +8,9 @@
 - name: Install PHP
   apt: name=php5-cli state=present update_cache=yes
 
+
+- name: Erase nodejs
+  apt: name=nodejs state=absent
+
 - name: Install NPM
   apt: name=npm state=present
