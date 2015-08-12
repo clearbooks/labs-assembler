@@ -3,6 +3,7 @@
 
   vars:
     - workspace: ../workspace/
+    - dist: ../dist/
 
     - repos:
       - labs-json-api
