@@ -1,6 +1,7 @@
 ---
 - name: Attempt to install compass
   gem: name=compass state=present
+  sudo: true
 
 - name: Update npm
   npm: name=npm state=latest global=yes
