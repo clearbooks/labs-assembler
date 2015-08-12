@@ -15,5 +15,6 @@ deploy:
   bucket: clearbooks-labs-api-releases
   skip_cleanup: true
   local-dir: dist
+  acl: public_read
   on:
     repo: clearbooks/labs-assembler
