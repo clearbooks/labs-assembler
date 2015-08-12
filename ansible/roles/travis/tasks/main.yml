@@ -4,3 +4,6 @@
 
 - name: Install PHP
   apt: name=php5-cli state=present update_cache=yes
+
+- name: Install NPM
+  apt: name=npm state=present
