@@ -11,6 +11,7 @@
 
 - name: Ensure grunt-cli exists
   npm: name=grunt-cli global=yes state=present
+  sudo:true
 
 - name: Ensure bower exists
   npm: name=bower global=yes state=present
