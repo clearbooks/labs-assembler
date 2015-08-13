@@ -3,4 +3,4 @@
   file: path={{workspace}}s3 state=directory
 
 - name: Compresss contents of dist directory into an S3 staging area
-  shell: tar -zcvf {{workspace}}s3/assembled.tar.gz {{dist}}*
+  shell: tar -zcvf {{workspace}}s3/assembled.tar.gz * chdir={{dist}}
