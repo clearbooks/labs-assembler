@@ -6,5 +6,8 @@
 - name: Run composer install
   composer: command=install working_dir={{workspace}}labs-json-api prefer_dist=yes no_dev=yes
 
+- name: Make dist API directory
+  file: path={{dist}}api state=directory
+
 - name: Copy compiled repo over to dist
-  shell: rsync -av --exclude=".*"  {{workspace}}labs-json-api {{dist}}
+  shell: rsync -av --exclude=".*"  {{workspace}}labs-json-api/* {{dist}}api
