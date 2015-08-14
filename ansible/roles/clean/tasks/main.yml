@@ -3,4 +3,4 @@
   file: path={{workspace}}s3 state=directory
 
 - name: Compresss contents of dist directory into an S3 staging area
-  shell: tar -zcvf {{workspace}}s3/assembled.tar.gz * chdir={{dist}}
+  shell: tar -cf - . | lzma --best --extreme > {{workspace}}s3/labs_${TRAVIS_BUILD_NUMBER}.tar.lzma chdir={{dist}}
