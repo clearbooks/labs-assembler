@@ -13,7 +13,7 @@
   sudo: true
 
 - name: Ensure uglify-js exists
-  npm: name=uglify-js global=yes state=latest
+  npm: name=uglifyjs global=yes state=present
   sudo: true
 
 - name: Ensure bower exists
