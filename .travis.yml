@@ -3,6 +3,7 @@ python: '2.7'
 sudo: true
 before_install:
 - echo "localhost ansible_connection=local" >> test.yml
+- ./authGithub.sh
 install:
 - pip install ansible
 script:
@@ -19,3 +20,6 @@ deploy:
   acl: public_read
   on:
     repo: clearbooks/labs-assembler
+env:
+  global:
+    secure: CQ2x9KLXwC7Eg5I1Bru8uTPc1n/su6QxMD3Dx3ENkn/S+P3/xdViqCFf3td/lUhCnzPZ5MsCRTUYyxYak2pcW9WcWlnBcq/ENu1Mz7/qdKgVNGf8n6lxWMNHit8DZPbrMkb4KV5Jx6qdycYhYSKcRfqAxDEAV2gS7EA4/CXtrNVpBKrPzi5IhaNoBtP40D5uF6j70cO+vnYNQrsDuYPe/nn8YjPiwUYyx79i7kJHRsOrwduGyjmnJqZbUBDaiwWv/b4bn9N3FrwtfCjUJ6kQPtFHH7vt3j8pxAPeX3anPWlASpMCjoBtOWMLMbSH2l8VUU8rDfZ0OLkWcIABZyyfLnszVpNh+fjp3dKJgu1j0V8Uif8MVWxfoVYEx+IzXMkH56eaYE6lsZ82glcUJspFuaMvyBgl9AFEZmdZm1mcjSIwYDIKENeB6s5LkMHnwXHUZZwP1FDOtNiC66D+g3IjgrbV/zrcmH2T1FiQCXPz/JyavEqPB2TbtmTWsY6JRZZZPcE+vZEL1/D2kbsGCa58r5nX278p70DRe3fU0SwZNCGJ5pbRZWP1yCHqfhRMeycv3q5Wv3Ui0yoqfMol0Q/6nMWNDDioVsG2TIbpdTgc8bz4tKPXI0PXpYLojzxAotxJ2iox3IAoQYc9xh3SxUdwPPk6aT2Ams878lNu6eidE6w=
