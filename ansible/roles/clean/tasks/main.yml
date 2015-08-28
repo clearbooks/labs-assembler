@@ -2,8 +2,5 @@
 - name: Ensure s3 directory exists
   file: path={{workspace}}s3 state=directory
 
-- name: Stick current date in variable
-  shell: NOW=$(date +"%Y%m%d-%H%M")
-
 - name: Compresss contents of dist directory into an S3 staging area
-  shell: tar -cf - . | lzma --best --extreme > {{workspace}}s3/labs_${NOW}.tar.lzma chdir={{dist}}
+  shell: tar -cf - . | lzma --best --extreme > {{workspace}}s3/labs_`date +"%Y%m%d-%H%M"`.tar.lzma chdir={{dist}}
