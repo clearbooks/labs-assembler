@@ -1,0 +1,8 @@
+---
+- name: Find example files
+  shell: "find {{ workspace }} -iname '*.example.*'"
+  register: example_files
+
+- name: Create copies of example files
+  shell: mv -f {{item}} {{item | regex_replace('\.example', '') }}
+  with_items: "{{ example_files.stdout_lines }}"

@@ -1,0 +1,5 @@
+---
+- name: Copy development areas
+  shell: rsync -rtvu --exclude="vendor" --exclude="node_modules" /home/vagrant/Projects/{{item}} {{workspace}}
+  with_items:
+     "{{repos}}"
