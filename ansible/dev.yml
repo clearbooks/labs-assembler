@@ -2,10 +2,10 @@
 - hosts: all
 
   vars:
-    - artifact_name_suffix_command: 'date +"%Y%m%d-%H%M"'
-    - lzma_args: "--best --extreme"
-    - workspace: ../workspace/
-    - dist: ../dist/
+    - lzma_args: "--fast"
+    - artifact_name_suffix_command: 'echo "dev"'
+    - workspace: /home/vagrant/assembler/workspace/
+    - dist: /home/vagrant/assembler/workspace/
 
     - repos:
       - labs-json-api
@@ -14,7 +14,7 @@
   roles:
    - { role: travis, when: ansible_os_family == 'Debian' }
    - { role: setup }
-   - { role: github }
+   - { role: local }
    - { role: example }
    - { role: api }
    - { role: frontend }
