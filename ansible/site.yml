@@ -4,8 +4,8 @@
   vars:
     - artifact_name_suffix_command: 'date +"%Y%m%d-%H%M"'
     - lzma_args: "--best --extreme"
-    - workspace: ../workspace/
-    - dist: ../dist/
+    - workspace: $TRAVIS_BUILD_DIR/workspace/
+    - dist: $TRAVIS_BUILD_DIR/dist/
 
     - repos:
       - labs-json-api
