@@ -3,7 +3,7 @@
 
   vars:
     - artifact_name_suffix_command: 'date +"%Y%m%d-%H%M"'
-    - lzma_args: "--best --extreme"
+    - xz_args: "--best --extreme"
     - workspace: /home/travis/build/clearbooks/labs-assembler/workspace/
     - dist: /home/travis/build/clearbooks/labs-assembler/dist/
 

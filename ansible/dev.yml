@@ -2,7 +2,7 @@
 - hosts: all
 
   vars:
-    - lzma_args: "--fast"
+    - xz_args: "--fast"
     - artifact_name_suffix_command: 'echo "dev"'
     - workspace: /home/vagrant/assembler/workspace/
     - dist: /home/vagrant/assembler/workspace/
