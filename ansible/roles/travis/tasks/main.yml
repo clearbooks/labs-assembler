@@ -8,7 +8,7 @@
   sudo: true
 
 - name: Install PHP
-  apt: name=php5-cli state=present update_cache=yes
+  apt: name=php5.6-cli state=present update_cache=yes
   sudo: true
 
 - name: Install NPM
