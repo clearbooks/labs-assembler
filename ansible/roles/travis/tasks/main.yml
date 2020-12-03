@@ -3,10 +3,6 @@
   become: yes
   shell: yes | add-apt-repository ppa:ondrej/php
 
-- name: Add recent Node
-  become: yes
-  shell: yes | add-apt-repository ppa:savoury1/node-xenial
-
 - name: Install PHP
   become: yes
   apt: name=php7.4-cli state=present update_cache=yes
