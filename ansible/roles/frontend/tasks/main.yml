@@ -9,12 +9,12 @@
   npm: path={{workspace}}labs-frontend state=latest
 
 - name: Ensure grunt-cli exists
+  become: yes
   npm: name=grunt-cli global=yes state=present
-  sudo: true
 
 - name: Ensure bower exists
+  become: yes
   npm: name=bower global=yes state=present
-  sudo: true
 
 - name: Run bower
   shell: bower install chdir={{workspace}}labs-frontend

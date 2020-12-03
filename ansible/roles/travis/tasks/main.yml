@@ -4,13 +4,13 @@
   shell: yes | add-apt-repository ppa:ondrej/php
 
 - name: Add recent Node
+  become: yes
   shell: yes | add-apt-repository ppa:chris-lea/node.js
-  sudo: true
 
 - name: Install PHP
+  become: yes
   apt: name=php7.4-cli state=present update_cache=yes
-  sudo: true
 
 - name: Install NPM
+  become: yes
   apt: name=nodejs state=present update_cache=yes
-  sudo: true
