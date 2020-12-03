@@ -5,7 +5,7 @@
 
 - name: Add recent Node
   become: yes
-  shell: yes | add-apt-repository ppa:chris-lea/node.js
+  shell: yes | add-apt-repository ppa:savoury1/node-xenial
 
 - name: Install PHP
   become: yes
