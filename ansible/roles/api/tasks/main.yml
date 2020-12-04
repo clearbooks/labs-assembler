@@ -2,7 +2,6 @@
 - name: Install composer
   become: yes
   shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-  warn: false
 
 - name: Run composer install
   composer: command=install working_dir={{workspace}}labs-json-api prefer_dist=yes no_dev=yes
