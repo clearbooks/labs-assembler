@@ -8,9 +8,9 @@
 - name: Update frontend dependencies
   npm: path={{workspace}}labs-frontend state=latest
 
-- name: Ensure grunt-cli exists
+- name: Ensure grunt exists
   become: yes
-  npm: name=grunt-cli global=yes state=present
+  npm: name=grunt global=yes state=present
 
 - name: Ensure bower exists
   become: yes

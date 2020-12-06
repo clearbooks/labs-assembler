@@ -10,7 +10,3 @@
 - name: Install NPM
   become: yes
   apt: name=npm state=present update_cache=yes
-
-- name: Install Grunt
-  become: yes
-  apt: name=grunt state=present update_cache=yes
