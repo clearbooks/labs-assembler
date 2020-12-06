@@ -27,4 +27,4 @@
   shell: source ~/.bashrc && grunt build chdir={{workspace}}labs-frontend executable=/bin/bash
 
 - name: Copy compiled repo over to dist
-  shell: rsync -av --exclude=".*"  {{workspace}}labs-frontend/dist/* {{dist}}http
+  shell: rsync -av --exclude=".*" {{workspace}}labs-frontend/dist/* {{dist}}http
