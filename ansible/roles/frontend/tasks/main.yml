@@ -8,10 +8,6 @@
 - name: Update frontend dependencies
   npm: path={{workspace}}labs-frontend state=latest
 
-- name: Ensure grunt exists
-  become: yes
-  npm: name=grunt global=yes state=present
-
 - name: Ensure grunt-cli exists
   become: yes
   npm: name=grunt-cli global=yes state=present
