@@ -8,7 +8,7 @@ before_install:
 install:
 - pip install ansible
 script:
-- ansible-playbook -vvv -i test.yml ansible/site.yml
+- ansible-playbook -i test.yml ansible/site.yml
 deploy:
   provider: s3
   access_key_id: AKIAJLKQUNLSLV2TIIPQ
