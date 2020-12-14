@@ -2,18 +2,12 @@
 - name: Attempt to install compass
   gem: name=compass state=present user_install=no
 
-- name: Update npm
-  npm: name=npm state=latest global=yes
-
 - name: Ensure grunt-cli exists
   become: yes
   npm: name=grunt-cli global=yes state=present
 
 - name: Update frontend dependencies
-  npm: path={{workspace}}labs-frontend state=latest
-  register: npmout
-
-- debug: var=npmout.stdout_lines
+  npm: path={{workspace}}labs-frontend state=present
 
 - name: Ensure bower exists
   become: yes
