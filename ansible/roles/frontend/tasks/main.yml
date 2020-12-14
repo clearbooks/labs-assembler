@@ -11,6 +11,9 @@
 
 - name: Update frontend dependencies
   npm: path={{workspace}}labs-frontend state=latest
+  register: npmout
+
+- debug: var=npmout.stdout_lines
 
 - name: Ensure bower exists
   become: yes
