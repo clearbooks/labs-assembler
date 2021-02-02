@@ -6,8 +6,8 @@ before_install:
 - echo "localhost ansible_connection=local" >> test.yml
 - ./authGithub.sh
 install:
-- pip install ansible
-- ansible --version
+- pip3 install ansible
+- ansible-playbook --version
 script:
 - ansible-playbook -i test.yml ansible/site.yml
 deploy:
