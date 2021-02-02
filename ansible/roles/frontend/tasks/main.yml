@@ -14,10 +14,15 @@
   npm: name=bower global=yes state=present
 
 - name: Run bower
-  shell: bower install chdir={{workspace}}labs-frontend
+  shell: bower install
+  agrs:
+    chdir: {{workspace}}labs-frontend
 
 - name: Run grunt to build frontend
-  shell: source ~/.bashrc && grunt build chdir={{workspace}}labs-frontend executable=/bin/bash
+  shell: source ~/.bashrc && grunt build
+  args:
+    chdir: {{workspace}}labs-frontend
+    executable: /bin/bash
 
 - name: Copy compiled repo over to dist
   shell: rsync -av --exclude=".*" {{workspace}}labs-frontend/dist/* {{dist}}http

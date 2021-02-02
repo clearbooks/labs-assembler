@@ -7,6 +7,7 @@ before_install:
 - ./authGithub.sh
 install:
 - pip install ansible
+- ansible --version
 script:
 - ansible-playbook -i test.yml ansible/site.yml
 deploy:
