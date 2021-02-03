@@ -4,7 +4,7 @@
 
 - name: Ensure grunt-cli exists
   become: yes
-  npm: name=grunt-cli global=yes state=present version=0.1.13
+  npm: name=grunt-cli global=yes state=present
 
 - name: Update frontend dependencies
   npm: path={{workspace}}labs-frontend state=present
@@ -17,7 +17,7 @@
   shell: bower install chdir={{workspace}}labs-frontend
 
 - name: Run grunt to build frontend
-  shell: source ~/.bashrc && grunt build
+  shell: source ~/.bashrc && node_modules/grunt/bin/grunt build
   args:
     chdir: "{{workspace}}labs-frontend"
     executable: /bin/bash
