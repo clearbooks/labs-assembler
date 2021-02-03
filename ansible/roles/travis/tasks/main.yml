@@ -1,16 +1,12 @@
 ---
 - name: Add recent PHP
+  become: yes
   shell: yes | add-apt-repository ppa:ondrej/php
-  sudo: true
-
-- name: Add recent Node
-  shell: yes | add-apt-repository ppa:chris-lea/node.js
-  sudo: true
 
 - name: Install PHP
-  apt: name=php5.6-cli state=present update_cache=yes
-  sudo: true
+  become: yes
+  apt: name=php7.4-cli state=present update_cache=yes
 
 - name: Install NPM
-  apt: name=nodejs state=present update_cache=yes
-  sudo: true
+  become: yes
+  apt: name=npm state=present update_cache=yes
