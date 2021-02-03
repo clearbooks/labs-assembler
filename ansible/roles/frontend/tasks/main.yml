@@ -4,7 +4,7 @@
 
 - name: Ensure grunt-cli exists
   become: yes
-  npm: name=grunt-cli global=yes state=present
+  npm: name=grunt-cli global=yes state=present version=0.1.13
 
 - name: Update frontend dependencies
   npm: path={{workspace}}labs-frontend state=present
