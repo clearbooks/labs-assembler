@@ -6,20 +6,18 @@
   become: yes
   npm: name=grunt-cli global=yes state=present
 
-- name: Update frontend dependencies
-  npm: path={{workspace}}labs-frontend state=present
-
 - name: Ensure bower exists
   become: yes
   npm: name=bower global=yes state=present
+
+- name: Update frontend dependencies
+  shell: npm install chdir={{workspace}}labs-frontend
 
 - name: Run bower
   shell: bower install chdir={{workspace}}labs-frontend
 
 - name: Run grunt to build frontend
-  shell: grunt build
-  args:
-    chdir: "{{workspace}}labs-frontend"
+  shell: source ~/.bashrc && grunt build chdir={{workspace}}labs-frontend executable=/bin/bash
 
 - name: Copy compiled repo over to dist
   shell: rsync -av --exclude=".*" {{workspace}}labs-frontend/dist/* {{dist}}http
