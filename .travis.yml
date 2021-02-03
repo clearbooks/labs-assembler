@@ -17,7 +17,8 @@ deploy:
     secure: a3EKsMTZr5dvf80i0Uk3XKlSNvK3+UlPU/OjUrWH0MPxngA0hvxiiK5X6v1MdzZQ7vCuw5pJa1ZWytjb6ZvVPsStDspG3Ipn+lZ3EBlObFFPsVyt7qSpNj8QWEx6kGJ1qwacw4ee5rmqgis9b3QAGNeAT8q+Dgk4kJY9lcqQ16YLzNOeMy8cbL9d0mEh+clwgiB2JMkk5K22dz+PC0E+M/NaWvv1CJ2BLfPZwN7BVOWy2xFhrK5M6AFVJ/KRDfTBcqhX1LzEvaETuj5pru/zJsicMvnEVYDwQ83ydVyhrt+ix3I32757foI6g9JI+ebQ2sB/X0iEQg99jB3a3ExZ/BQxhcs0nOgGVo2JchpgsIJsQD7ofUuXi3kd8zrekD04A9PXGhgKKSHuNF3W0KT8JJD8ja65WVz52RJmP2j6eAGxZwUvgdpSg3A4ET7AGaWWnqi9fW7dqkl0IEp+2ghprHNki/xONKkBtdg2yjCRnMWyCoMWENSd8KwdnyPCRRJGvCPzmp+j1ahFsPcpaF7ymhhNCAmW0cFMwXDWkAlnreXom6DfU8wxuj0C6HeXi7ROIaAshq8BqN2QkXu77C3LfPi4qep43cI43zHdSdX7dwxq9zw2pXQevhCL972uLuTmXdy9ZgzSrBumyARJy21l0ADKYjF252a71PRqvm2Vfz4=
   bucket: clearbooks-labs-api-releases
   region: eu-west-1
-  local_dir: /home/travis/build/clearbooks/labs-assembler/workspace/s3
+  skip_cleanup: true
+  local_dir: workspace/s3
   acl: public_read
   on:
     repo: clearbooks/labs-assembler
